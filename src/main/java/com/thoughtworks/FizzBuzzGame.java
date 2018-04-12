@@ -2,8 +2,6 @@ package com.thoughtworks;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 public class FizzBuzzGame {
@@ -18,27 +16,11 @@ public class FizzBuzzGame {
         whizz = 7;
     }
 
-    public boolean setNumber(Integer fizz, Integer buzz, Integer whizz) {
-        if (fizz <= 0 || fizz > 9) {
-            return false;
-        }
-        if (buzz <= 0 || buzz > 9) {
-            return false;
-        }
-        if (whizz <= 0 || whizz > 9) {
-            return false;
-        }
-        if (fizz.equals(buzz) || fizz.equals(whizz) || buzz.equals(whizz)) {
-            return false;
-        }
-        this.fizz = fizz;
-        this.buzz = buzz;
-        this.whizz = whizz;
-        return true;
-    }
-
     public void start(int count) {
-
+        results.clear();
+        for (int i = 1; i <= count; i++) {
+            this.results.add(getAnswer(i));
+        }
     }
 
     public List<String> getResults() {
@@ -58,7 +40,29 @@ public class FizzBuzzGame {
         result.append(i % fizz == 0 ? "Fizz" : "");
         result.append(i % buzz == 0 ? "Buzz" : "");
         result.append(i % whizz == 0 ? "Whizz" : "");
+        if (result.length() == 0) {
+            result.append(i);
+        }
         return result.toString();
+    }
+
+    public boolean setNumber(Integer fizz, Integer buzz, Integer whizz) {
+        if (fizz <= 0 || fizz > 9) {
+            return false;
+        }
+        if (buzz <= 0 || buzz > 9) {
+            return false;
+        }
+        if (whizz <= 0 || whizz > 9) {
+            return false;
+        }
+        if (fizz.equals(buzz) || fizz.equals(whizz) || buzz.equals(whizz)) {
+            return false;
+        }
+        this.fizz = fizz;
+        this.buzz = buzz;
+        this.whizz = whizz;
+        return true;
     }
 }
 
