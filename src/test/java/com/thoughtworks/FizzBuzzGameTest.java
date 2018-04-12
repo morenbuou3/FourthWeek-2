@@ -80,9 +80,9 @@ public class FizzBuzzGameTest {
     }
 
     @Test
-    public void should_return_BuzzWhizz_when_have_35() {
+    public void should_return_BuzzWhizz_when_have_70() {
         String expect = "BuzzWhizz";
-        String actual = fizzBuzzGame.getAnswer(35);
+        String actual = fizzBuzzGame.getAnswer(70);
         assertEquals(expect, actual);
     }
 
@@ -90,6 +90,20 @@ public class FizzBuzzGameTest {
     public void should_return_FizzBuzzWhizz_when_have_105() {
         String expect = "FizzBuzzWhizz";
         String actual = fizzBuzzGame.getAnswer(105);
+        assertEquals(expect, actual);
+    }
+
+    @Test
+    public void should_return_Fizz_when_have_13() {
+        String expect = "Fizz";
+        String actual = fizzBuzzGame.getAnswer(13);
+        assertEquals(expect, actual);
+    }
+
+    @Test
+    public void should_return_Fizz_when_have_35() {
+        String expect = "Fizz";
+        String actual = fizzBuzzGame.getAnswer(35);
         assertEquals(expect, actual);
     }
 }

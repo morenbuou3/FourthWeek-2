@@ -47,6 +47,14 @@ public class FizzBuzzGame {
 
     String getAnswer(int i) {
         StringBuilder result = new StringBuilder();
+        int n = i;
+        while (n != 0) {
+            if (n % 10 == fizz) {
+                return result.append("Fizz").toString();
+            } else {
+                n = (n - n % 10) / 10;
+            }
+        }
         result.append(i % fizz == 0 ? "Fizz" : "");
         result.append(i % buzz == 0 ? "Buzz" : "");
         result.append(i % whizz == 0 ? "Whizz" : "");
