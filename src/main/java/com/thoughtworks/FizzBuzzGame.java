@@ -45,26 +45,12 @@ public class FizzBuzzGame {
         return results;
     }
 
-    public String getAnswer(int i) {
-        if (i % fizz == 0 && i % buzz == 0) {
-            return "FizzBuzz";
-        }
-        if (i % fizz == 0 && i % whizz == 0) {
-            return "FizzWhizz";
-        }
-        if (i % buzz == 0 && i % whizz == 0) {
-            return "BuzzWhizz";
-        }
-        if (i % fizz == 0) {
-            return "Fizz";
-        }
-        if (i % buzz == 0) {
-            return "Buzz";
-        }
-        if (i % whizz == 0) {
-            return "Whizz";
-        }
-        return null;
+    String getAnswer(int i) {
+        StringBuilder result = new StringBuilder();
+        result.append(i % fizz == 0 ? "Fizz" : "");
+        result.append(i % buzz == 0 ? "Buzz" : "");
+        result.append(i % whizz == 0 ? "Whizz" : "");
+        return result.toString();
     }
 }
 

@@ -85,4 +85,11 @@ public class FizzBuzzGameTest {
         String actual = fizzBuzzGame.getAnswer(35);
         assertEquals(expect, actual);
     }
+
+    @Test
+    public void should_return_FizzBuzzWhizz_when_have_105() {
+        String expect = "FizzBuzzWhizz";
+        String actual = fizzBuzzGame.getAnswer(105);
+        assertEquals(expect, actual);
+    }
 }
